@@ -1,12 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const userRoutes = require('.routers/userRoutes');
+
 const app = express();
 
-//Añadiendo body-parser como middlewar
-app.use(bodyParser.urlencoded({extended:false}));
+//  Añadiendo body-parser como middlewar
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.post('/users',(req,res)=>{
-    res.status(200).send({});
-});
+//  Routing
+app.use('/v1', userRoutes);
+
 module.exports = app;

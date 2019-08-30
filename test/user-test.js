@@ -21,8 +21,8 @@ test('should pass',(t)=>{
 
     //cuando el usaurio envie su información al sistema
     request(app)
-        .post('/user')
-        .expect('Content-Type','/json/')
+        .post('/users')
+        .expect('Content-Type',/json/)
         .expect(201)
         .end((err,res)=>{
             t.falsy(err,'should no error'); //https://github.com/avajs/ava/blob/HEAD/docs/03-assertions.md
